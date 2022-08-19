@@ -2,16 +2,17 @@ require "open-uri"
 require 'faker'
 
 puts "Cleaning db..."
+Bookmark.destroy_all
 Movie.destroy_all
 List.destroy_all
-Bookmark.destroy_all
+
 
 url = "https://tmdb.lewagon.com/movie/top_rated"
 movies = JSON.parse(URI.open(url).read)
 
 puts "Creating lists..."
 
-6.times do
+16.times do
   List.create!(name: Faker::Emotion.adjective, image_url: Faker::LoremPixel.image(size: "200x250", is_gray: false, category: 'fashion'))
 end
   
