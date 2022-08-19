@@ -1,0 +1,14 @@
+<h1>Lists#index</h1>
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <%= link_to list_path(list) do %>        
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+             <%= list.name.capitalize %>
+          </div>
+       <% end %> 
+     <% end %>
+  </div>
+
+<%= link_to "Create a new list", new_list_path(@list) %>
+
+
